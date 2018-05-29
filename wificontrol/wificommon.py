@@ -35,7 +35,7 @@ class WiFiControlError(Exception):
 
 
 class WiFi(object):
-    restart_mdns = "systemctl restart mdns.service && sleep 2"
+    restart_mdns = "service avahi-daemon restart && sleep 2"
     rfkill_wifi_control = lambda self, action: "rfkill {} wifi".format(action)
 
     def __init__(self, interface):
