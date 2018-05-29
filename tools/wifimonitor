@@ -1,26 +1,24 @@
 #!/usr/bin/python
+
 import signal
-from reachstatus import StateClient
-from wificontrol import WiFiMonitor
-from dev_utils import configure_logging
+from wificontrol import WiFiMonitor, WiFiControl
 
 
 def main():
-    configure_logging()
 
     def handler(signum, frame):
         wifi_monitor.shutdown()
 
-    wifi_monitor = WiFiMonitor()
+    def print_wifi_state():
+        print(WiFiControl().get_status())
+        wifi_monitor = WiFiMonitor()
 
-    wifi_monitor.register_callback(wifi_monitor.HOST_STATE, StateClient.set_network_host_state)
-    wifi_monitor.register_callback(wifi_monitor.CLIENT_STATE, StateClient.set_network_client_state)
-    wifi_monitor.register_callback(wifi_monitor.OFF_STATE, StateClient.set_network_disabled_state)
-    wifi_monitor.register_callback(wifi_monitor.SCAN_STATE, StateClient.set_network_scan_state)
-    wifi_monitor.register_callback(wifi_monitor.REVERT_EVENT,
-                                   StateClient.send_revert_connect_notify)
-    wifi_monitor.register_callback(wifi_monitor.SUCCESS_EVENT,
-                                   StateClient.send_success_connect_notify)
+    wifi_monitor.register_callback(wifi_monitor.HOST_STATE, print_wifi_state)
+    wifi_monitor.register_callback(wifi_monitor.CLIENT_STATE, print_wifi_statete)
+    wifi_monitor.register_callback(wifi_monitor.OFF_STATE, print_wifi_statetate)
+    wifi_monitor.register_callback(wifi_monitor.SCAN_STATE, print_wifi_state)
+    wifi_monitor.register_callback(wifi_monitor.REVERT_EVENT, print_wifi_statetify)
+    wifi_monitor.register_callback(wifi_monitor.SUCCESS_EVENT, print_wifi_stateotify)
 
     signal.signal(signal.SIGINT, handler)
     signal.signal(signal.SIGTERM, handler)
