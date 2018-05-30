@@ -1,12 +1,11 @@
-{
-date
-PATH=$PATH:/usr/local/bin:/root
-export PATH
-echo $PATH
-export USER=root
-export HOME=/root
-cd /root
-pwd
-/home/apsync/start_wificontrol/init_wifi.py
-screen -d -m -s /bin/bash python /home/apsync/start_wificontrol/server.py
-} > /tmp/server.log 2>&1
+#!/bin/bash
+
+# WARNING: this script is run as root!
+set -e
+set -x
+
+pushd ~apsync/start_wificontrol
+./init_wifi.py
+screen -L -d -m -S wificontrol -s /bin/bash ./server.py >start_wificontrol.log 2>&1
+
+exit 0
