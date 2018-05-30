@@ -1,6 +1,8 @@
+#!/usr/bin/python
+
 # uncompyle6 version 2.11.2
 # Python bytecode 2.7 (62211)
-# Decompiled from: Python 2.7.13 (default, Apr  4 2017, 08:47:57) 
+# Decompiled from: Python 2.7.13 (default, Apr  4 2017, 08:47:57)
 # [GCC 4.2.1 Compatible Apple LLVM 8.1.0 (clang-802.0.38)]
 # Embedded file name: build/lib/updater/server.py
 # Compiled at: 2017-02-22 02:46:08
