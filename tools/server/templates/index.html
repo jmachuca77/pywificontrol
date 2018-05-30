@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ArduPilot APSync</title>
+	
+	<link rel="icon" href="/static/images/favicon.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/static/images/favicon.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icons/fontawesome/styles.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/icons/icomoon/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/core.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/components.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/colors.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="login-container">
+    <div class="disconnect_overlay"></div>
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper" style="min-width:320px;">
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Form with validation -->
+					<form method="post">
+						<div class="panel panel-body login-form">
+							<div class="text-center">
+								<img src="/static/images/favicon.png" alt="" style="width:250px;">
+								<h5 class="content-group">ArduPilot APSync<small class="display-block">Configure your Wi-Fi Network</small></h5>
+                            </div>
+							<div class="panel-group panel-group-control panel-group-control-right content-group-lg" id="accordion-control-right">
+                                <div class="panel panel-white">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="collapsed wi-fi_anchor"  data-toggle="collapse" data-parent="#accordion-control-right" href="#accordion-control-right-group1"><span class="wifi_status" style="margin-right:5px;"><i class="text-warning icon-circle-small"></i></span> Wi-Fi</a>
+                                        </h6>
+                                    </div>
+                                    <div id="accordion-control-right-group1" class="panel-collapse collapse">
+                                        <ul class="media-list media-list-linked wi-fi_list">
+                                            <div id="connected_wi-fi"></div>
+                                            <div id="added_wi-fi"></div>
+                                            <div id="add_network_container">
+                                                <li class="media">
+                                                    <a href="#" class="media-link" data-toggle="modal" data-target="#modal_network">
+                                                        <div class="media-body text-center">
+                                                          <div class="media-heading text-semibold"><i class="icon-plus2 btn  btn-flat btn-rounded btn-icon btn-xs" style="padding: 5px 10px;font-size: 16px;border-color:#00b5e2;color:#00b5e2;"></i></div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+								<div class="panel panel-white">
+									<div class="panel-heading" style="position:relative">
+										<div class="overlay sync_overlay"></div>
+                                        <h6 class="panel-title">
+											<a class="collapsed time_anchor" data-toggle="collapse" data-parent="#accordion-control-right" href="#accordion-control-right-group2"><span class="sync_status" style="margin-right:5px;"><i class="text-warning icon-circle-small"></i></span> Time sync</a>
+										</h6>
+									</div>
+									<div id="accordion-control-right-group2" class="panel-collapse collapse">
+										<div class="panel-body">
+                                            <p class="text-muted time_sync_warning"></p>
+										</div>
+									</div>
+								</div>
+                                <div class="panel panel-white">
+                                    <div class="panel-heading" style="position:relative">
+                                        <div class="overlay sync_overlay"></div>
+                                        <h6 class="panel-title">
+                                            <a class="collapsed hostname_anchor" data-toggle="collapse" data-parent="#accordion-control-right" href="#accordion-control-right-group3"><span class="set_hostname_status" style="margin-right:5px;"><i class="text-warning icon-circle-small"></i></span> Change Hotspot Name</a>
+                                        </h6>
+                                    </div>
+                                    <div id="accordion-control-right-group3" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-group" style="margin-bottom:0">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <label>Set New Hostname</label>
+                                                        <input type="text" class="form-control required_field" placeholder="hostname" id="input_new_host_name">
+                                                        <p class="modal_edit_warning" style="color:red;margin-bottom:0;"></p>
+                                                        <p class="text-muted current_hostname"></p>
+                                                    </div>
+                                                    <div id="host_name_info" class="col-sm-12">
+                                                        <p class="text-muted text-size-small">
+                                                            <i class="icon-info22"></i>
+                                                            <span>Host name must be 5-20 characters.</span>
+                                                            <br>
+                                                            <span>Valid characters are <b>A-Z&nbsp;a-z&nbsp;0-9&nbsp;_&nbsp;-</b>.</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <button type="button" class="btn btn-primary submit_modal_button" id="save_host_name_button">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+                            
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-default btn-block create_ap" value='Create Access Point'>
+                            </div>
+
+							<div class="form-group">
+								<input type="submit" class="btn btn-default btn-block disabled to_app" value='Reboot and go to APWeb'>
+							</div>
+
+						</div>
+					</form>
+					<!-- /form with validation -->
+
+
+					<!-- Footer -->
+					<div class="footer text-muted">
+                        <p>Current host name is <strong class="current_hotspot_name"></strong></p>
+						<p>2017 ArduPilot - Jaime Machuca</p>
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+    <!-- Add network modal -->
+    <div id="modal_network" class="modal fade">
+        <div class="modal-dialog modal-xs">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title">Add new Wi-Fi network</h5>
+                </div>
+
+                <form action="#">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>Network name</label>
+                                    <input type="text" placeholder="Network name" class="form-control required_field" id="new_network_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>Security</label>
+                                    <select class="bootstrap-select" id="security_select" data-width="100%">
+                                    	<option value="wep">WEP</option>
+                                        <option value="wpapsk">WPA-PSK</option>
+                                    	<option value="wpa2psk" selected="selected">WPA2-PSK</option>
+                                    	<option value="wpaeap">WPAEAP</option>
+                                    	<option value="open">Open</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>Identity</label>
+                                    <input type="text" placeholder="Identity" class="form-control required_field" id="new_network_identity">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>Password</label>
+                                    <input type="password" placeholder="Password" class="form-control required_field" id="new_network_pass">
+                                    <p class="modal_add_warning" style="color:red;margin-top:20px;margin-bottom:0;"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">       
+                            <div class="row">     
+                                <div class="col-sm-12">       
+                                    <label><input type="checkbox" class="styled" id="show_pass">&nbsp;&nbsp;Show password</label>     
+                                </div>        
+                            </div>        
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="create_new_network">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- add network modal -->
+    <!-- Saved network connect modal -->
+    <div id="modal_saved_connect" class="modal fade">
+        <div class="modal-dialog modal-xs">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="modal-title text-semibold network_title"></h5>
+                </div>
+
+                <form action="#">
+                    <div class="modal-body">
+                       <!-- <h3 class="text-semibold network_title"></h3> -->
+                       <h6 class="network_mac"></h6>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning submit_modal_button pull-left" id="forget_network">Forget</button>
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary submit_modal_button" id="connect_network">Connect</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /saved network connect modal -->
+    <script src="{{ url_for('static', filename='require.js') }}"></script>
+    <script src="{{ url_for('static', filename='updater_module.js') }}"></script>
+</body>
+</html>

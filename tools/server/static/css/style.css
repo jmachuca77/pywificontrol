@@ -1,0 +1,418 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-100.ttf');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-300.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-400.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-500.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-700.ttf');
+    font-weight: 700;
+}
+div.panel_margin{
+ 	margin-top: 20px;
+}
+#map{
+	height: 500px;
+}
+#map:-moz-full-screen {
+	height: 100%;
+	width: 100%;
+}
+#map:-webkit-full-screen {
+	height: 100%;
+	width: 100%;
+}
+#map:-ms-fullscreen {
+	height: 100%;
+	width: 100%;
+}
+#map:fullscreen {
+	height: 100%;
+	width: 100%;
+}
+#followCoordinateLabel{
+	padding-left: 10px;
+}
+.media-right.media-middle.text-nowrap i:hover{
+    color: black;
+}
+/*.media-header i{
+	display: none;
+}*/
+#discoverable_bluetooth_devices .animated_action i{
+	display: none;
+}
+#d3-bar-grouped g.d3-axis.d3-axis-vertical.d3-axis-strong g:first-child text{
+	display: none;
+}
+.d3-axis.d3-axis-horizontal text{
+	display: none;
+}
+#d3-bar-grouped .d3-axis.d3-axis-horizontal.d3-axis-strong text.empty_bar{
+	display: none;
+}
+#d3-bar-grouped .d3-axis.d3-axis-horizontal.d3-axis-strong text.visible_bar{
+	display: inline;
+}
+.btn-group.btn-group-justified .btn.active{
+	box-shadow: none;
+	background: #26A69A;
+}
+.btn-group.btn-group-justified .btn.active.disabled{
+	background: #455A64;
+}
+.btn-group.btn-group-justified .bg-slate-700{
+	border-color: transparent;
+}
+.form_inputs{
+	margin-top: 20px;
+}
+#correction-link .checkbox, #solution-output .checkbox, #base-mode .checkbox{
+	margin-top: 0;
+}
+.solution_output_buttons1, .solution_output_buttons2, .solution_output_buttons3, .correction_link_buttons{
+	margin-top: 15px;
+}
+.table-xs > tbody > tr > td{
+	padding: 8px;
+}
+#discoverable_bluetooth_devices li a,
+#paired_bluetooth_devices li a,
+#connected_wi-fi li a,
+#available_wi-fi li a,
+#added_wi-fi li a, 
+#saved_wi-fi li a,
+#add_network_container li a{
+	border-top: 1px solid #ddd;
+}
+#logs_list .media-body, #camera_list .media-body, #writting_logs_list .media-body{
+	width: inherit;
+}
+#logs_list .log_size, #writting_logs_list .log_size, #logs_list .log_format, #writting_logs_list .log_format{
+	width: 200px;
+}
+.media-list-linked .media-header.highlight_header{
+	padding: 8px 20px;
+	background: #f8f8f8;
+	margin-bottom: 0;
+	margin-top: 0;
+	border-top: 1px solid #ddd;
+}
+.media-list-linked .media-link.inactive_bluetooth_link:hover{
+	background-color: white;
+	cursor: default;
+}
+.deleted_log_hover{
+	display: none;
+	/*font-weight: bold;*/
+	background: #eaeaea;
+	cursor: default;
+	padding: 17px 0 16px !important;
+}
+.log_string td.log_download, .log_string td.log_delete{
+	border-left: 1px solid #ddd;width:50px;
+}
+.log_string td.log_download:hover, .log_string td.log_delete:hover{
+	background: #eaeaea;
+	cursor: pointer;
+}
+.log_select{
+	cursor: pointer;
+}
+.selected-logs-buttons:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.panel-flat > .panel-heading.highlight-header, legend.highlight-header{
+	padding: 5px 20px;
+	background: #f8f8f8;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+.panel-flat > .panel-heading.highlight-header.rtk-param-header{
+	padding-bottom: 7px;
+}
+.panel-flat > .panel-heading.highlight-header h6, .panel-flat > .panel-heading.highlight-header label{
+	font-size: 13px;
+}
+.panel-flat > .panel-heading.highlight-header:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.llh-to-xyz-container button{
+	padding-top:0;
+	padding-bottom: 0;
+}
+#mode_value, #status_value{
+	text-transform: capitalize;
+}
+.content-group {
+    margin-bottom: 10px !important;
+}
+.llh-to-xyz-container button{
+	border:none;
+}
+.rtk-visible{
+	display: none;
+}
+.scan-spinner{
+	position: relative;
+	top: 3px;
+}
+.online-label{
+	padding-right: 15px;
+}
+.highlight-header .checkbox.checkbox-switchery{
+	margin-top:0;
+	margin-bottom: 0;
+}
+#wi-fi .panel-flat > .panel-heading.highlight-header.no-margin{
+	margin-bottom: 0;
+	border-bottom: none;
+}
+.panel-flat > .panel-heading + .panel-body{
+	padding-bottom: 0px;
+}
+.gnss_table tr td:first-child, #rtcm3_messages tr td:first-child{
+	padding-left: 20px;
+}
+#rtcm3_messages tr td.checkbox_cell{
+	text-align: right;
+}
+.bootstrap-datetimepicker-widget{
+	display: table !important;
+}
+.slider.slider-horizontal{
+	width: 100%;
+	/*margin-top: 8px;*/
+}
+table{
+	font-size: 13px;
+}
+.form_load_state.non-default{
+	border: 1px solid #ddd;
+	top: 30px;
+	height: calc(100% - 30px);
+}
+.form_load_state{
+    z-index: 50;
+    background: rgba(255,255,255,0.7);
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 100%;
+    display: none;
+}
+.form_load_state .fa{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    color: #000;
+    font-size: 30px;
+}
+.load_wrapper{
+	padding: 0;
+}
+.checkbox-switch:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.bootstrap-switch-handle-on, .bootstrap-switch-handle-off{
+	border: 1px solid #ddd;
+}
+/*.unsaved_label{
+	color: #FF5722 !important;
+	font-weight: 500 !important;
+}*/
+.unsaved_alert_badge{
+	top: -10px;
+	width: 20px;
+	height: 20px;
+	display: none;
+}
+.unsaved_alert_badge.visible_alert, .sidebar-badge.visible_alert{
+	display: inline;
+}
+.sidebar-xs .sidebar-main .navigation-main > li:hover > a > span.sidebar-badge{
+	display: none;
+}
+.sidebar-badge{
+	display: none;
+}
+.active .sidebar-badge{
+	color: #26A69A !important;
+}
+.panel-footer{
+	padding: 10px 20px;
+	display: none;
+}
+#logging .panel-footer{
+	display: block;
+}
+.reset_button{
+	margin-right: 10px;
+}
+.occupied_bluetooth{
+	display: none;
+}
+.form_inputs{
+	display: none;
+}
+.base_coordinates_container.form_inputs, .antenna_offset_container.form_inputs{
+	display: block;
+}
+.disabled_btn_group{
+	margin-bottom: 10px;
+}
+.send_button i{
+	display: none;
+}
+.label_click{
+	cursor: pointer;
+}
+.float_container:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+#wi-fi .float_container .checkbox{
+	margin:0;
+}
+#wi-fi .form_load_state{
+	left: 0px;
+	top: 1px;
+	height: calc(100% - 1px);
+	width: 100%;
+}
+#wi-fi .media-list.media-list-linked{
+	position: relative;
+}
+.form_indicator{
+	margin-right: 2px;
+	color: #EF5350;
+}
+.form_stream_messages{
+	border-top: 1px solid #ddd;
+	padding: 10px 20px;
+	margin-bottom: 0;
+}
+.form_stream_messages:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.form_stream_messages span{
+	display: none;
+	padding-left: 16px;
+}
+.form_stream_messages span.visible_stream{
+	display: block;
+}
+.form_stream_messages span:first-child{
+	padding-left: 0;
+	display: block;
+	cursor: pointer;
+	width: calc(100% - 20px);
+}
+.form_stream_messages .stream_arrow{
+	position: relative;
+	top: 2px;
+	cursor: pointer;
+}
+.navbar-header .navbar-nav > li > a{
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.rtcm-time-interval{
+	width: 60px;
+}
+.introjs-helperNumberLayer{
+	width: 30px !important;
+	height: 30px !important;
+}
+
+
+
+.coords_progress{
+	display: none;
+}
+.coords_progress_warning{
+	display: none;
+}
+.average-control-buttons{
+	display: none;
+	margin-right:10px;
+	color: #333333;
+}
+.average-control-buttons i{
+	font-size: 14px;
+}
+
+
+
+
+#add_network_container li a:hover{
+	background: white;
+}
+.hotspot_button_li{
+	display: none;
+}
+.disconnect_overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.4);
+	cursor: not-allowed;
+	z-index: 100;
+	display: none;
+}
+.connected_wi-fi_network a:hover, .connected_wi-fi_network a:focus{
+	background-color:white !important;
+}
+.connected_wi-fi_network .media-right.media-middle.text-nowrap i:hover{
+	color: #999999;
+}
+.overlay{
+	position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.8);z-index: 1;
+}
+.disconnect_overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.4);
+	cursor: not-allowed;
+	z-index: 100;
+	display: none;
+}
+@media (max-width: 480px){
+	.panel-footer ul, .panel-footer .pull-right {
+	    margin-left: 0;
+	     float: right !important; 
+	}
+}
