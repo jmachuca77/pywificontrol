@@ -62,7 +62,7 @@ if [ "$CMD" = "P2P-GROUP-STARTED" ]; then
     GIFNAME=$3
     if [ "$4" = "GO" ]; then
         kill_daemon udhcpc /var/run/udhcpc-$GIFNAME.pid
-        ifconfig $GIFNAME 192.168.42.1 up
+        ifconfig $GIFNAME 10.0.1.128 up
         cp /etc/wpa_supplicant/udhcpd-p2p.conf /etc/wpa_supplicant/udhcpd-p2p-itf.conf
         sed -i "s/INTERFACE/$GIFNAME/" /etc/wpa_supplicant/udhcpd-p2p-itf.conf
         udhcpd /etc/wpa_supplicant/udhcpd-p2p-itf.conf
@@ -85,4 +85,3 @@ if [ "$CMD" = "P2P-GROUP-REMOVED" ]; then
         ifconfig $GIFNAME 0.0.0.0
     fi
 fi
-
