@@ -42,19 +42,19 @@ from wificontrol import WiFiControl
 
 def _show_result(result, wifi_controller):
     if result:
-        sys.stdout.write("Network mode: client")
+        sys.stdout.write("Network mode: client\n")
     else:
         if wifi_controller.start_host_mode():
-            sys.stdout.write("Network mode: master")
+            sys.stdout.write("Network mode: master\n")
         else:
-            sys.stdout.write("Network mode: unknown")
+            sys.stdout.write("Network mode: unknown\n")
 
 
 def initialize():
     try:
         wifi_controller = WiFiControl()
     except OSError:
-        sys.stdout.write("Network mode: unknown")
+        sys.stdout.write("Network mode: unknown\n")
     else:
         wifi_controller.turn_on_wifi()
 
@@ -64,9 +64,9 @@ def initialize():
                 args=(wifi_controller,))
         else:
             if wifi_controller.start_host_mode():
-                sys.stdout.write("Network mode: master")
+                sys.stdout.write("Network mode: master\n")
             else:
-                sys.stdout.write("Network mode: unknown")
+                sys.stdout.write("Network mode: unknown\n")
 
 
 if __name__ == "__main__":
